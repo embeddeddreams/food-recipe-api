@@ -14,6 +14,7 @@ import { UsersRoutes } from './src/users/users.routes.config';
 import { AuthRoutes } from './src/auth/auth.routes.config';
 import debug from 'debug';
 import helmet from 'helmet';
+import { RecipesRoutes } from './src/recipes/recipes.routes.config';
 
 const app: express.Application = express();
 const server: http.Server = http.createServer(app);
@@ -24,7 +25,7 @@ const debugLog: debug.IDebugger = debug('app');
 app.use(express.json());
 app.use(cors());
 app.use(helmet());
-// user id PYEbZQMXJ
+
 const loggerOptions: expressWinston.LoggerOptions = {
     transports: [new winston.transports.Console()],
     format: winston.format.combine(
@@ -45,6 +46,7 @@ app.use(expressWinston.logger(loggerOptions));
 
 routes.push(new UsersRoutes(app));
 routes.push(new AuthRoutes(app));
+routes.push(new RecipesRoutes(app));
 
 const runningMessage = `Server running at http://localhost:${port}`;
 app.get('/', (req: express.Request, res: express.Response) => {
