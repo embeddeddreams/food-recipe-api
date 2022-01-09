@@ -6,7 +6,7 @@ const log: debug.IDebugger = debug('app:recipes-controller');
 
 class RecipesController {
 	async listRecipes(req: express.Request, res: express.Response) {
-		const recipes = await recipesService.list(req.body.limit ?? 25, 0);
+		const recipes = await recipesService.list(req.query.limit as unknown as number ?? 25, req.query.page as unknown as number ?? 0);
 		res.status(200).send(recipes);
 	}
 	async searchInRecipes(req: express.Request, res: express.Response) {
