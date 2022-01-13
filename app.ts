@@ -18,7 +18,7 @@ import { RecipesRoutes } from './src/recipes/recipes.routes.config';
 
 const app: express.Application = express();
 const server: http.Server = http.createServer(app);
-const port = 1871;
+const port = 3000;
 const routes: Array<CommonRoutesConfig> = [];
 const debugLog: debug.IDebugger = debug('app');
 
