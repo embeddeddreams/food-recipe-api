@@ -28,6 +28,7 @@ class RecipesDao {
 		recipeCategory: [String],
 		recipeMealType: [String],
 		recipeCookType: [String],
+		recipeSpecialCase: [String],
 		recipeOrderTime: Number,
 		recipePrepTime: Number,
 		date: { type: Date, default: Date.now },

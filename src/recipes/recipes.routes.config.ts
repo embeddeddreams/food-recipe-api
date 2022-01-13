@@ -38,6 +38,7 @@ export class RecipesRoutes extends CommonRoutesConfig {
 				body('recipeCategory').isArray(),
 				body('recipeMealType').isArray(),
 				body('recipeCookType').isArray(),
+				body('recipeSpecialCase').isArray(),
 				body('recipeOrderTime').isInt(),
 				body('recipePrepTime').isInt(),
 				body('fromUsers').isBoolean().optional(),
